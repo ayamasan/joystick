@@ -17,6 +17,6 @@ basic.forever(function () {
     差分Y = Math.constrain(ステックY - ステックY0, -200, 200)
     Y = Math.round(Math.map(差分Y, -200, 200, 0, 4))
     led.plot(X, Y)
-    bluetooth.uartWriteString("" + convertToText(ステックX) + "," + convertToText(ステックY))
+    bluetooth.uartWriteString("" + convertToText(差分X) + "," + convertToText(差分Y))
     basic.pause(100)
 })
