@@ -3,14 +3,14 @@ let 差分X = 0
 let ステックY = 0
 let ステックX = 0
 bluetooth.startUartService()
-let ステックX0 = pins.analogReadPin(AnalogPin.P0)
-let ステックY0 = pins.analogReadPin(AnalogPin.P1)
+let ステックX0 = pins.analogReadPin(AnalogPin.P1)
+let ステックY0 = pins.analogReadPin(AnalogPin.P0)
 let X = 2
 let Y = 2
 led.plot(X, Y)
 basic.forever(function () {
-    ステックX = pins.analogReadPin(AnalogPin.P0)
-    ステックY = pins.analogReadPin(AnalogPin.P1)
+    ステックX = pins.analogReadPin(AnalogPin.P1)
+    ステックY = pins.analogReadPin(AnalogPin.P0)
     led.unplot(X, Y)
     差分X = Math.constrain(ステックX - ステックX0, -200, 200)
     X = Math.round(Math.map(差分X, -200, 200, 0, 4))
